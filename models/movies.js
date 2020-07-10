@@ -33,5 +33,4 @@ Movies.associate = (models) => {
 };
 
 return Movies;
-
 module.exports = Movies;

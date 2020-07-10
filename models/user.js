@@ -15,11 +15,18 @@ const User = db.define("user", {
   email: {
     type: Sequelize.STRING,
   },
+  createdAt: {
+    type: Sequelize.DATE,
+  },
+  updatedAt: {
+    type: Sequelize.DATE,
+  },
 });
 
 User.sync().then(() => {
   console.log("table created");
 });
+/*
 User.associate = (models) => {
   User.hasMany(models.Movies, { onDelete: "CASCADE" });
 };
@@ -37,5 +44,5 @@ User.findByLogin = async (login) => {
   return user;
 };
 return User;
-
+*/
 module.exports = User;

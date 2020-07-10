@@ -3,9 +3,10 @@ const bcrypt = require("bcrypt");
 const router = express.Router();
 const db = require("../config/database");
 const User = require("../models/user");
-//const Op = Sequelize.Op;
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
-router.get("/", (req, res) => {
+/*router.get("/", (req, res) => {
   User.findAll()
     .then((result) => {
       console.log(result);
@@ -14,7 +15,7 @@ router.get("/", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
-});
+}); */
 router.get("/:id", (req, res) => {
   //const currentUser = await User.findById(id).select("-password");
   //return res.send(currentUser);

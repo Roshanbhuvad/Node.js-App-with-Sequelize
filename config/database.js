@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-module.exports = new Sequelize("movies", "postgres", "roshan", {
+const db = new Sequelize("movies", "postgres", "roshan", {
   host: "localhost",
   dialect: "postgres",
   operatorsAliases: false,
@@ -12,4 +12,4 @@ module.exports = new Sequelize("movies", "postgres", "roshan", {
   },
 });
 
-//module.exports = db;
+module.exports = db;

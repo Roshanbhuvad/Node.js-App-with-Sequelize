@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const db = require("../config/database");
 const Movies = require("../models/movies");
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 router.post("/addmovie", async (req, res) => {
   const add = await new Movies({
