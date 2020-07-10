@@ -6,16 +6,20 @@ const User = require("../models/user");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 
-/*router.get("/", (req, res) => {
-  User.findAll()
-    .then((result) => {
-      console.log(result);
-      res.json(result);
+router.get("/", (req, res) => {
+  User.findByLogin = async (login) => {
+    let user = await User.findOne({
+      where: { username: login },
     })
-    .catch((err) => {
-      console.log(err);
-    });
-}); */
+      .then((result) => {
+        console.log(result);
+        res.json(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+});
 router.get("/:id", (req, res) => {
   //const currentUser = await User.findById(id).select("-password");
   //return res.send(currentUser);

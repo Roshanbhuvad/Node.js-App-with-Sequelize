@@ -26,11 +26,11 @@ const User = db.define("user", {
 User.sync().then(() => {
   console.log("table created");
 });
-/*
+
 User.associate = (models) => {
   User.hasMany(models.Movies, { onDelete: "CASCADE" });
 };
-
+/*
 User.findByLogin = async (login) => {
   let user = await User.findOne({
     where: { username: login },
